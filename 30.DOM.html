@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul:nth-child(2){
+            background-color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>aaa</h1>
+    <ul>
+        <li>aaa</li>
+        <li>bbb</li>
+        <li>ccc</li>
+        <li>ddd</li>
+        <li>eee</li>
+    </ul>
+    <ul>
+        <li>xxxx</li>
+        <li>yyyy</li>
+        <li>zzzz</li>
+    </ul>
+    <script>
+        // let h1 = document.querySelector("h1");
+        // console.log(h1.nodeType); // 1
+        // console.log(h1.nodeName); // H1
+        // console.log(h1.nodeValue); //null
+        // console.log(h1.firstChild.nodeType); //3
+        // console.log(h1.firstChild.nodeName); //#text
+        // console.log(h1.firstChild.nodeValue);//aaa
+
+        // console.log(h1.innerText);
+        // console.log(h1.textContent);
+        let theUl = document.querySelector("ul");
+
+
+        // for (let i = 0, max = theUl.childNodes.length; i < max; i++) {
+        //     if (theUl.childNodes[i].nodeType === 1) {
+        //         console.log(theUl.childNodes[i].nodeName);
+        //         console.log(theUl.childNodes[i].firstChild.nodeValue);
+        //     }
+        // }
+
+        // console.log(theUl.childNodes[5].firstChild.nodeValue); //ccccc
+        // console.log(theUl.childNodes[5].previousSibling.previousSibling.firstChild.nodeValue); //bbbbb
+        // console.log(theUl.childNodes[5].nextSibling.nextSibling.firstChild.nodeValue); //ddddd
+
+
+        // console.log(document.getElementsByTagName("li").length);  //8
+        // let uls = document.getElementsByTagName("ul"); 
+        // console.log(uls[1].getElementsByTagName("li").length); //3
+
+        console.log(document.querySelectorAll("li").length);
+        console.log(document.querySelectorAll("ul:nth-child(3)>li").length);
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let a = "abc";
+        // let b = a;
+        // b = "xyz";
+        // console.log(a); //abc
+        // console.log(b); //xyz
+
+        let itemA = ["a", "b", "c", { "name": "Tom" }];
+
+        //淺shallow拷貝
+        // let itemB = itemA;
+        //let itemB = [...itemA];
+
+        //深deep拷貝
+        //stringify => JSON物件轉成字串
+        let itemB = JSON.parse(JSON.stringify(itemA));
+
+        itemB.push("d");
+        itemB[3].name = "Jack";
+
+        console.log(itemA); //["a", "b", "c"] or ["a", "b", "c". "d"]
+        console.log(itemB); //["a", "b", "c". "d"]
+
+
+    </script>
+</body>
+
+</html>

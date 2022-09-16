@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="inpName">
+    <input type="button" name="" id="ck" value="click">
+    <script src="./js/vaild.js"></script>
+    <SCript>
+        const inpName = document.getElementById('inpName');
+        const ck = document.getElementById('ck');
+        ck.addEventListener("click", function () {
+            let put = inpName.value;
+            if (checkempt(put)) {
+                alert(`您的信箱為${put}`)
+            } else {
+                alert(`請輸入正確信箱`)
+            }
+
+
+        })
+
+
+
+
+        // const inpName = document.getElementById("inputName");
+        // const btn = document.getElementById("button1");
+        // btn.addEventListener("click", function () {
+        //     let name = inpName.value;
+        //     if (name === "") {
+        //         alert("請輸入姓名");
+        //     } else {
+        //         alert(`Hello ${name}`);
+        //     }
+        // })
+
+        // const inpName = document.getElementById("inputName");
+        // const btn = document.getElementById("button1");
+        // btn.addEventListener("click", function () {
+        //     let name = inpName.value;
+
+
+        //     if (checkEmpty(name)) {
+        //         alert(`Hello ${name}`);
+        //     } else {
+        //         alert("請輸入姓名");
+        //     }
+        // })
+    </SCript>
+</body>
+
+</html>

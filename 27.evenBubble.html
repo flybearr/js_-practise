@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="div1">
+        <div id="div2">
+            <p id="p1">PPPPPPPPPPPPPPP</p>
+        </div>
+    </div>
+    <script>
+        //當有巢狀結構會產生下列狀況
+        //false => event bubbling  由內額外 的氣泡現象 
+        //true => event capturing  由外額內 
+        document.querySelector("#div1").addEventListener("click", event => {
+            event.stopPropagation(); //停止事件氣泡現象
+            console.log(event.target, event.currentTarget)
+        }, false)
+        document.querySelector("#div2").addEventListener("click", event => {
+            event.stopPropagation(); //停止事件氣泡現象
+            console.log(event.target, event.currentTarget)
+        }, false)
+        document.querySelector("#p1").addEventListener("click", event => {
+            console.log(event.target, event.currentTarget)
+            event.stopPropagation(); //停止事件氣泡現象
+        }, false)
+
+        // let sayHi = function (name) {
+        //     return `HEllO ${name}`;
+        // }
+        //goes to arrow function
+        // let sayHi = (name) => {
+        //     return `HEllO ${name}`;
+        // }
+
+        // let sayHi = name => {
+            //...
+            //...
+        //     return `HEllO ${name}`;
+        // }
+
+        //let sayHi = name => `HEllO ${name}`;
+
+
+        //console.log(sayHi("XYZ"));
+    </script>
+</body>
+
+</html>

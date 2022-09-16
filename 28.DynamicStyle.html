@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .s1 {
+            color: green;
+            text-decoration: underline;
+        }
+
+        .s3 {
+            background-color: cadetblue;
+            padding: 10px;
+        }
+
+        .s2 {
+            color: red;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>JavaScript Style Change</h1>
+    <script>
+        let theH = document.querySelector("h1");
+        // theH.addEventListener("mouseover", () => {
+        //     // theH.style.color = "green";
+        //     // theH.style.textDecoration = "underline";
+        //     // theH.style.backgroundColor = "lightgreen";
+        //     // theH.style.padding = "10px";
+
+        //     //theH.className = "s1";
+
+        //     theH.classList.add("s1", "s3");
+        // })
+        // theH.addEventListener("mouseout", () => {
+        //     // theH.style.color = "red";
+        //     // theH.style.textDecoration = "none";
+        //     //theH.className = "s2";
+        //     theH.classList.remove("s3");
+        // })
+        theH.addEventListener("click", () => {
+            // if (theH.classList.contains("s1")) {
+            //     theH.classList.remove("s1")
+            // } else {
+            //     theH.classList.add("s1")
+            // }
+            theH.classList.toggle("s1");
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <select name="" id="select1">
+        <!-- <option value="1">text</option>
+        <option value="2">Item2</option> -->
+    </select>
+    <select name="" id="selectarea"></select>
+    <select name="" id="selectroad"></select>
+
+
+
+
+    <script src="datas/address.js"></script>
+    <script>
+        let sel = document.querySelector("#select1");
+        let selarea = document.querySelector("#selectarea");
+        let selroad = document.querySelector("#selectroad");
+
+        ADDRESS.forEach((value, index, array) => {
+            // console.log(value);
+            // console.log(index);
+            // console.log(value.CityName);
+            let { CityName, CityEngName } = value;
+            sel[index] = new Option(CityName, CityName);
+            // sel.options.add(new Option(value.CityName, value.CityName));
+        });
+
+
+        sel.addEventListener("change", () => {
+            selarea.options.length = 0;
+            //讀取資料
+            //sel.selectedIndex; >> 使用者選擇到的option裡的索引值
+
+            // console.log(sel.options[sel.selectedIndex].value) //抓sel的value 
+            // console.log(sel.options[sel.selectedIndex].text) //抓sel的text 
+
+            let city = sel.options[sel.selectedIndex].value; //設定select選到的值並賦予city變數給他
+
+            let areas = ADDRESS.filter((value, index, array) =>
+                value.CityName === city
+            );
+            //select選到的值 === ADDRESS的值匹配 ， 過濾出來的值 會是一個陣列
+            console.log(areas);
+            areas[0].AreaList.forEach((value, index, array) => {
+                let { ZipCode, AreaName } = value;
+                selarea[index] = new Option(AreaName, ZipCode);
+            })
+        })
+        selarea.addEventListener("change", () => {
+            let city = sel.options[sel.selectedIndex].value;
+            let catch_area = selarea.options[selarea.selectedIndex].value;
+
+
+            let areas = ADDRESS.filter((value, index, array) =>
+                value.CityName === city
+            );
+
+
+            let roads = areas[0].AreaList.filter((value, index, array) =>
+                value.ZipCode === catch_area
+            );
+
+            roads[0].RoadList.forEach((value, index, array) => {
+                let { RoadName } = value;
+                selroad[index] = new Option(RoadName, RoadName);
+            })
+        })
+
+        //新增方法1
+        // sel.options.add(new Option("item3", "3"));
+        //新增方法2
+        // sel[sel.options.length] = new Option("item4", "4");
+
+        //清除
+        // sel.options.length = 0;
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let total = 0;
+        // for(let i = 1 ; i<=100; i++){
+        //     total = total+i; // total +=i;
+        // }
+        // console.log(`1加到100等於${total}`)
+
+        // for (let num = 1; num <=1000; num++) {
+        //     if (num % 2 !== 0 && num % 3 !== 0) {
+        //         console.log(num);
+        //     }
+        // }
+
+        // for (let x =1;x<=9;x++){
+        //     for(let y =1; y <= 9 ; y++){
+        //         let z = x * y;
+        //         console.log (`${z}`);
+        //     }
+
+        // }
+        // let total = 0;
+        // let i = 0;
+        // while (i <= 100) {
+
+        //     total += i;
+        //     i++;
+        // }
+        // console.log(`${total}`)
+
+        // while(true){
+        //     let text = window.prompt("輸入指令","quit");
+        //     if(text === "quit"){
+        //         console.log("bye");
+        //         break;
+        //     }
+        //     console.log(text);
+        // }
+        let num = Math.random()
+        console.log(num); //0-1 之間的值
+        console.log(num * 100); //0-1 之間的值
+        //math.floor() 無條件捨去
+        let guess = Math.floor(num * 100);
+        console.log(Math.floor(num * 100)); //取整數
+
+        let answer = 0;
+        while (answer !== guess) {
+            let answer = Number(window.prompt("輸入0出去", "0"));
+            if (answer == 0) {
+                break;
+            }
+            else if (answer > guess) {
+                alert("數字太大");
+                console.log("數字太大!");
+            }
+            else if (answer < guess) {
+                alert("數字太小");
+                console.log("數字太小!");
+            } else if (answer == guess) {
+                alert("答對了!");
+                console.log("答對了!");
+                break;
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

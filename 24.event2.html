@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .note {
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+            position: absolute;
+            top: 300px;
+            left: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="text1" placeholder="keypress">
+    <input type="text" id="text2" placeholder="keydown">
+    <input type="text" id="text3" placeholder="keyup">
+    <div class="note"></div>
+
+    <a href="https://service.ispan.com.tw/iSpanScore/stu/check.php" id="atag">學員點評</a>
+    <script>
+        //document.querySelector("css selectors")
+        //document.querySelectorAll("css selectors")
+        // document.getElementsByClassName("className") //回傳的是多筆資料集合[div] [0]  回傳值是個陣列
+        let divnote = document.querySelector(".note");
+        let t1 = document.querySelector("#text1");
+        let t2 = document.querySelector("#text2");
+        let t3 = document.querySelector("#text3");
+
+        let atag = document.querySelector("#atag");
+
+        atag.addEventListener("click",event=>{
+            if(!window.confirm("要去開起的網頁嗎?")){
+                event.preventDefault();
+            }
+        })
+        
+
+
+        let flag;
+        let startX;
+        let startY;
+        let divLeft;
+        let divTop;
+
+        t1.addEventListener("keypress", (e) => {
+            //a-z 97-122
+            //A-Z 65-90
+            //0-9 48-57
+            console.log(event);
+            console.log(event.which);
+        })
+        t2.addEventListener("keydown", (e) => {
+            //無法分辨大小寫 65-90
+            //shift、alt、ctrl  鍵盤功能鍵
+            // console.log(event);
+            console.log(event.which);
+        })
+        t3.addEventListener("keyup", (e) => {
+            //無法分辨大小寫 65-90
+            //shift、alt、ctrl 
+            // console.log(event);
+            console.log(event.which);
+        })
+
+
+
+
+
+
+        document.addEventListener("contextmenu", (evt) => evt.preventDefault());
+
+        divnote.addEventListener("mousedown", (evt) => {
+            console.log(evt)
+            // //事件對象
+            // console.log(evt.target);
+            // console.log(evt.currentTarget);
+            // //事件類型
+            // console.log(evt.type);
+
+
+            switch (evt.button) {
+                case 0:
+                    console.log("左鍵");
+                    break;
+                case 1:
+                    console.log("滾輪");
+                    break;
+                case 2:
+                    console.log("右鍵");
+                    break;
+            }
+
+            // console.log(event.screenX, event.screenY); //螢幕的左上角當成 0,0
+            console.log(event.clientX, event.clientY); //瀏覽器視窗的左上角當成 0,0 開始算起
+            console.log(event.offsetX, event.offsetY); //事件對象的左上角當成 0, 0 開始算起
+            console.log(event.target.offsetLeft, event.target.offsetTop); //事件對象的左上角的位置 開始算起
+            console.log(divnote.offsetLeft, divnote.offsetTop); //事件對象的左上角的位置 開始算起
+            flag = true;
+            startX = evt.clientX;
+            startY = evt.clientY;
+            divLeft = divnote.offsetLeft;
+            divTop = divnote.offsetTop;
+        })
+
+
+        document.addEventListener("mouseup", () => flag = false);
+        document.addEventListener("mousemove", evt => {
+            if (flag) {
+                divnote.style.left = divLeft + (evt.clientX - startX) + "px";
+                divnote.style.top = divTop + (evt.clientY - startY) + "px";
+            }
+        })
+
+
+
+    </script>
+</body>
+
+</html>

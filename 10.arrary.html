@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let ball = ["baseball", "basekeball", "valleyball", "tennies"]
+        // console.log(ball[2]) //valleyball
+        // let [b1, b2] = ball; //陣列解陣
+        // console.log(b1) //baseball
+
+        // let emp = { "name": "jack", "age": 20, "issingle": true }
+        // let { name, age } = emp;    //物件解陣
+
+        // // console.log(emp.name)
+
+
+
+        // let emps = [
+        //     { "name": "jack", "age": 23, "issingle": true },
+        //     { "name": "ash", "age": 20, "issingle": true },
+        //     { "name": "lux", "age": 18, "issingle": false }
+        // ]
+        // // let {name,age} = emps[2] //陣列包物件查詢  解陣
+        // console.log(name)
+        // console.log(age)
+
+        // console.log(emps[2].age) //陣列包物件查詢
+        // // -----------------------------------        
+        // // 字串型態
+        // let x = window.prompt("輸入數字", 10);
+        // let y = window.prompt("輸入數字", 10);
+        // console.log(x + y);  // 變成1010
+        // console.log(parseInt(x)); //轉換數字型態
+        // //-------------------------------------
+        // //轉變成數字型態
+        // // let t = Number(window.prompt("輸入數字", 10));
+        // // let w = Number(window.prompt("輸入數字", 10));
+        // // console.log(t + w);  //變成20
+
+        // console.log(parseInt("10", 10)); //10
+        // console.log(parseInt("1A", 10)); //??  >>1
+        // console.log(parseInt("1A", 16)); //26
+        // console.log(parseInt("15.6", 10)); //15
+        // console.log(parseInt("A1", 10)); //?? >> NaN
+        //-----------------------------------
+        //布林大多會是true 
+        // 除了0,undefined,null," ", 是false預設值
+        //但 [],{},"0"是true        
+        console.log(Boolean({})); //true 
+
+
+
+
+
+        //------------------------------------
+        // let a = 10;
+        // let b = 10;
+        // b = b * a++;
+        // console.log(a);
+        // console.log(b);
+        // // -----------------------------
+        // let c = 10;
+        // let d = 10;
+        // d = d * ++c;
+        // console.log(c);
+        // console.log(d);
+
+
+        // let f = 5;
+        // let h = 10;
+        // console.log(h > f);
+        // console.log(false && "abc");  //當and碰到第一個false後就不會再判斷下個  並印出false
+        // console.log(true && "abc");   // 當 and 判斷true後 ，輸出後方字串 abc
+        // console.log(true && "");  //輸出空值
+        // console.log(false || "xyz");  // 當 or 判斷false後，會在判斷下一個 ，輸出後方字串 xyz
+        // console.log(true || "xyz");  //當or碰到第一個true後就不會再判斷下個  並印出true
+
+        // let name = "";
+        // //未輸入名稱是訪客
+        // console.log(name || 'guest');
+        // //輸入名字 顯示名字
+        // name = "jack" ;
+        // console.log(name || 'guest');
+
+        // let isLogin = false;
+        // console.log(isLogin ? "已登入":"未登入")
+        // let Login = true;
+        // console.log(Login ? "已登入":"未登入")
+
+        // let num1 = Number(window.prompt("輸入數字",0));
+        // let num2 = Number(window.prompt("輸入數字",0));
+        // let num3 = Number(window.prompt("輸入數字",0));
+        // let max = "0";
+        // if (num1>=num2 && num1>=num3){
+        //      max = num1;
+        // }else if (num2>=num1 && num2>=num3){
+        //     max=num2
+        // }else {
+        //      max = num3;
+        // }
+
+
+
+        // console.log(`${max} is biger`)
+
+        let theDay = 2;
+        let theDay1 = new Date().getDay();
+
+        let days = "";
+        // switch (theDay) {
+        //     case 0:
+        //         days = "日";
+        //         break;
+        //     case 1:
+        //         days = "一";
+        //         break;
+        //     case 2:
+        //         days = "二";
+        //         break;
+        //     case 3:
+        //         days = "三";
+        //         break;
+        //     case 4:
+        //         days = "四";
+        //         break;
+        //     case 5:
+        //         days = "五";
+        //         break;
+        //     case 6:
+        //         days = "六";
+        //         break;
+        //     default:
+        //         aDay = "不知";
+        // }
+
+        
+
+        switch (theDay) {
+            case 0:
+            case 6:
+                days = "weekend";
+                break;
+
+            case 1:
+
+            case 2:
+
+            case 3:
+
+            case 4:
+
+            case 5:
+                days = "weekday";
+
+
+            default:
+                aDay = "不知";
+        }
+        console.log(`今天星期${days}`);
+
+        // if(num1>num2&&num1>num3){
+        //     console.log(`${num1}最大`);
+        // }else if(num2>num1&&num2>num3){
+        //     console.log(`${num2}最大`);
+        // }else if (num3>num1&&num3>num2){
+        //     console.log(`${num3}最大`);
+        // }else((num1==num2)&&(num2==num3)&&(num1==num3))
+        //     console.log("一樣大");
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

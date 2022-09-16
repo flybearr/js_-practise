@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .s1 {
+            width: 50%;
+        }
+
+        .s2 {
+            border: 1px solid green;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" value="新增" id="buttonCreate">
+    <input type="button" value="刪除" id="buttonRemove" disabled>
+    <div id="div1"></div>
+</body>
+<script>
+    const theDiv = document.querySelector('#div1');
+    let docfrag = document.createDocumentFragment();
+    document.querySelector("#buttonCreate").addEventListener(
+        "click", () => {
+            //建立元素節點
+            let eleH3 = document.createElement("h3");
+            //建立文字節點
+            let h3txt = document.createTextNode("你好");
+
+
+            //透過appendChild()建立關係  外包內(元素 與 文字 建立關係)
+            eleH3.appendChild(h3txt); //<h3>Hello DOM!!</h3>
+
+
+
+
+            //建立圖片元素節點
+            let eleimg = document.createElement('img');
+
+            //建立圖片屬性
+            eleimg.setAttribute("src", "img/300px-Original_Doge_meme.jpg");
+            //給class
+            eleimg.classList.add("s1", "s2");
+
+            eleimg.addEventListener("mouseover", toggle);
+            eleimg.addEventListener("mouseout", toggle);
+
+
+            // 將 暫存節點放入theDiv  (但會使DOM裡面重複執行，會將兩個東西放入docFrag最後在一次輸出)
+            // theDiv.appendChild(eleH3); //<div><h3>Hello DOM!!</h3>
+            // theDiv.appendChild(eleimg);
+            docfrag.appendChild(eleH3);
+            docfrag.appendChild(eleimg);
+            theDiv.appendChild(docfrag);
+
+
+            //刪除屬性
+            document.querySelector("#buttonRemove").removeAttribute("disabled");
+
+        }
+
+
+
+    )
+
+
+    function toggle(event) {
+        let theimg = event.target;
+        let imgsrc = theimg.getAttribute("src");
+
+
+        if (imgsrc.indexOf("300px-Original_Doge") != -1) {
+            theimg.setAttribute("src", "img/car.jpg")
+        } else {
+            theimg.setAttribute("src", "img/300px-Original_Doge_meme.jpg");
+        }
+    }
+
+
+
+
+    document.querySelector("#buttonRemove").addEventListener(
+        "click", () => {
+            // let theNode = theDiv.querySelector("h3");
+            // theDiv.removeChild(theNode);
+
+
+            // console.log(theDiv.hasChildNodes());
+            //沒有子節點會回傳false  //有節點回傳true
+            while (theDiv.hasChildNodes()) {
+                theDiv.removeChild(theDiv.firstChild);
+            } //判斷裡面是否還有節點，為true時會刪除loop ，false停止
+        }
+
+
+    )
+</script>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="empul"></ul>
+    <script>
+        let emps = [{ "name": "Tom", "workYears": 3, "salary": 55000 },
+        { "name": "Jack", "workYears": 5, "salary": 40000 },
+        { "name": "Mary", "workYears": 7, "salary": 45000 }];
+
+        //針對薪水去排序
+        emps.sort((a, b) => a.salary - b.salary);
+
+        // 篩選 讀出年資超過5年的
+
+        let x = emps.filter((value, index, array) =>  value.workYears >= 5 );
+        console.log(x);
+
+
+
+
+        let datas = emps.map((value, index, array) => {
+            let { name, workYears, salary } = value;
+            return (
+                `<li>${name}-年資${workYears}-薪水${salary}</li> `
+            )
+        })
+
+        console.log(datas.join("")); //join會移除陣列逗號
+        document.getElementById("empul").innerHTML = datas.join("");
+
+    </script>
+</body>
+
+</html>

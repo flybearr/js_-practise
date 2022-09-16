@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--
+        var 跟 let 不一樣之處：
+var 變數可以重複設定，let 不行
+var 有變數提升(hoisting)的效果，let 沒有
+有效範圍不同
+var 是函式作用域(function scope)
+let 是區塊作用域(block scope)
+
+    -->
+    <script>
+
+        //var 變數可以重複設定，let 不行
+        // var a = "abc";
+        // var a = "xyz";
+        // console.log(a);  //xyz
+
+        // let a = "abc";
+        // //let a = "xyz"; //Uncaught SyntaxError: Identifier 'a' has already been declared
+        // a = "xyz";
+        // console.log(a);  //xyz
+        // const a = "abc";
+        // //a = "xyz";  //variableScope.html:31 Uncaught TypeError: Assignment to constant variable.
+        // console.log(a);  //abc
+
+        //廣(全)域變數 vs 區域變數
+
+        //用 var、let 宣告在 function 之外就叫做廣域變數
+        var name = "Tom";
+        let age = 30;
+
+        function sayHi() {
+            var email = "abc@company.com";  //宣告在function叫做區域變數
+            let isLogin = true;
+
+            // if (isLogin) {
+            //     let x = "xyz";
+            //     var z = "zzz";
+            //     const y = "yyy";
+            // }
+            // console.log(name); //Tom
+            // console.log(age);  //30
+            // // console.log(x); //Uncaught ReferenceError: x is not defined
+            // console.log(z); //zzz
+            // console.log(y);
+        }
+        //沒有辦法讀取區域變數
+        //console.log(email); //Uncaught ReferenceError: email is not defined
+        //console.log(isLogin);//Uncaught ReferenceError: email is not defined
+        sayHi();
+
+        if (true) {
+            var a = "123";
+            let b = "456";
+            age = 50;
+            console.log(age);  //40
+        }
+        console.log(age);
+        // console.log(a);
+        // console.log(b);
+        // console.log(age); //30
+
+
+
+
+        // let 在區塊內不會影響值 (block) 例如 if裡的括號 "{}"
+        //var 在function內不會影響其他值
+    </script>
+</body>
+
+</html>

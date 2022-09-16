@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let ball = ["baseball", "basekeball", "valleyball", "tennies"]
+        // for(let i=0 , x=ball.length ; i<x ;i++){
+        //     console.log(ball[i]);
+        // }
+
+
+
+        // let emps = [
+        //     { "name": "jack", "age": 23, "issingle": true },
+        //     { "name": "ash", "age": 20, "issingle": true },
+        //     { "name": "lux", "age": 18, "issingle": false }
+        // ]
+        // for(let i=0 , max=emps.length ; i<max ;i++){
+        //     let {name,age,issingle} = emps[i];
+        //     console.log(name,age,issingle);
+        // }
+
+        // ------------------------------- es6讀取新寫法 for of 通常用於陣列
+        //  let ball = ["baseball", "basekeball", "valleyball", "tennies"]
+        //     for (let x of ball ){
+        //         console.log(x);
+        //     }
+
+        // ------------------------------- es6讀取新寫法 for in  當讀取物件時的用法
+        // let emps = { "name": "jack", "age": 23, "issingle": true }
+
+        // for (let i in emps) {
+        //     console.log(i);
+        //     console.log(emps[i]);
+        // }
+
+        // ------------------------------- es6讀取新寫法for of 加 for in  混和寫法
+        let emps = [
+            { "name": "jack", "age": 23, "issingle": true },
+            { "name": "ash", "age": 20, "issingle": true },
+            { "name": "lux", "age": 18, "issingle": false }
+        ]
+        // for(let i of emps){
+        //    for(let x in i){
+        //     console.log(x);
+        //     console.log(i[x]);
+        //    }
+        // }
+        for (let i of emps) {
+            let { name, age, issingle } = i;
+            console.log(name, age, issingle);
+            }
+
+    </script>
+</body>
+
+</html>

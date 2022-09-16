@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // function sayHi(name, age) {
+        //     // console.log(`Hello ${name}`);
+        //     // console.log(arguments);
+        //     for (let i = 0, max = arguments.length; i < max; i++) {
+        //         console.log(arguments[i]);
+        //     }
+        // }
+        // sayHi();        //Hello undefined
+        // sayHi("Eric");  //Hello Eric
+        // sayHi("Tom", 30); //Hello Tom
+        // sayHi("Tom", 30, "Tom@company.com"); //Hello Tom
+
+        //預設參數
+        function getSum(num1, num2 = 1) {
+            console.log(num1);
+            console.log(num2);
+            console.log(num1 + num2);
+        }
+
+        // getSum();
+        // getSum(3);
+        // getSum(3, 5);
+
+        //其餘運算子（rest operator）
+        // function getSum(a, b, ...vals) {
+        //     // console.log(a);
+        //     // console.log(b);
+        //     console.log(vals);
+        //     let sum = "";
+        //     for (let i = 0, max = vals.length; i < max; i++) {
+        //         sum += vals[i];
+        //     }
+        //     console.log(sum);
+        // }
+
+        // getSum(1, 2, 3);
+        // getSum(1, 2,"你好", "丁丁");
+
+        //展開運算子(spread operator）
+        // let arr1 = ["a", "b", "c"];
+        // let arr2 = ["x", "y", "z"];
+        // let arr3 = [...arr1, ...arr2];   //["a","b","c","x","y","z"]
+        // let arr4 = ["x", ...arr1, "y"];
+        // // arr3.push("a");
+        // // arr3.push("b");
+        // console.log(arr4);
+
+
+
+
+
+        //具名參數
+        // function user({ name, email, age }) {
+        //     console.log(name, age, email);
+        // }
+
+        // user({ "name": "Mary", "age": 30, "email": "mary@company.com" });
+
+    </script>
+</body>
+
+</html>

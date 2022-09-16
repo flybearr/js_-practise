@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <div id="mouseover">
+    </div>
+    <img id="doge" src="./300px-Original_Doge_meme.jpg" alt="">
+    <script>
+        const mouseOverChange = document.getElementById("mouseover")
+
+        mouseOverChange.style.color = "blue";
+        mouseOverChange.style.fontSize = "5rem";
+        mouseOverChange.innerText = "請點擊我";
+        mouseOverChange.addEventListener("mouseout", function () {
+            mouseOverChange.style.color = "blue";
+            mouseOverChange.style.fontSize = "5rem";
+            mouseOverChange.innerText = "請點擊我";
+        })
+        mouseOverChange.addEventListener("mouseover", function () {
+            mouseOverChange.style.color = "red";
+            mouseOverChange.style.fontSize = "10rem";
+            mouseOverChange.innerText = "你好！";
+        })
+
+        const doge = document.getElementById("doge")
+        doge.style.width = "200px";
+        doge.style.opacity = ".5";
+        doge.addEventListener("mouseout", function () {
+            doge.style.opacity = ".5";
+            doge.style.width = "200px";
+        })
+        doge.addEventListener("mouseover", function () {
+            doge.style.opacity = "1";
+            doge.style.width = "800px";
+        })
+    </script>
+</body>
+
+</html>

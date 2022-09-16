@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Hello World!!</h1>
+
+    <script>
+        let theH = document.querySelector("h1");
+        //在H1標籤裡面修改內容
+        // theH.textContent = "<i>abcd</i>";
+        //theH.innerHTML = "<i>abcd</i>";
+        //從H1標籤外面改內容，所以H1也會被覆蓋掉
+        // theH.outerText = "<u>abcd</u>";
+        // theH.outerHTML = "<u>abcd</u>";
+        //
+        // theH.insertAdjacentHTML("afterbegin", "aaaaaaa");   //afterbegin 標籤的後面 文字的前面
+        // theH.insertAdjacentHTML("beforeend", "bbbbbbb");   //beforeend 標籤的前面 文字的後面
+        // theH.insertAdjacentHTML("beforebegin", "cccccc");  //beforebegin 標籤的前面 文字的前面
+        theH.insertAdjacentText("afterend", "<u>dddddd</u>"); // afterend 標籤的後面 文字的後面   
+    </script>
+</body>
+
+</html>

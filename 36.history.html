@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">0</button>
+    <script>
+        const btn = document.querySelector('#btn');
+        let count = 0;
+        btn.addEventListener('click', e => {
+            btn.textContent = ++count;
+            history.pushState(count, null, "/push/" + count); //push0 push1  
+
+        })
+        //pushState操控瀏覽器歷史紀錄
+
+        // popstate 是
+        window.addEventListener('popstate', e => {
+            if (e.state) {
+                btn.textContent = e.state;
+                return;
+            }
+            btn.textContent = 0;
+
+        })
+
+    </script>
+</body>
+
+</html>

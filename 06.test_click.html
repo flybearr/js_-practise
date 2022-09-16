@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap {
+            display: flex;
+            gap: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <label for="name">姓名</label>
+        <input type="text" id="name" value="小明">
+        <button id="btn">確定</button>
+        <samp id="Mdiv"></samp>
+    </div>
+
+    <script>
+        const input_Name = document.getElementById('name')
+        const btn = document.getElementById('btn')
+        const empty = document.getElementById("Mdiv");
+        input_Name.addEventListener("input", function () {
+            console.log(input_Name.value)
+        })
+        let output = ["問卷已完成", "已填寫完畢", "不要再點了"];
+
+        for (let i = 0, x = output.length; i < x; i++) {
+            btn.addEventListener("click", function () {
+                
+                // empty.innerHTML = "<h2>" + input_Name.value + "</h2>";
+                empty.innerText = output[i];
+
+            })
+        }
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

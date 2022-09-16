@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="">溫度計</label>
+    <input type="text" id="put">
+    <select name="" id="">
+        <option id="C" value="degreeC">攝氏</option>
+        <option id="F" value="degreeF">華氏</option>
+    </select>
+    <button class="btn">轉換</button>
+    <div id></div>
+    <script src="./funtion.js"></script>
+    <script>
+        // function sayhi(name){
+        //     console.log(`hello ${name}` );
+        // }
+
+        // sayhi("berry");
+
+
+
+        //函式宣告式 具有hoisting特質 
+
+        // function celsius_to_faharenhelt (degreeC){
+        //     let degreeF= degreeC * (9/5) +32 ;
+        //     console.log(`攝氏${degreeC}度C 可以轉化成華氏${degreeF}度C`);
+        // }
+        // function faharenhelt_to_celsius (degreeF){
+        //     let degreeC= (degreeF -32)-(5/9) ;
+        //     console.log(`華氏${degreeF}度C 可以轉化成攝氏${degreeC}度C`);
+        // }
+
+
+        // ------------------------------------------
+        //函式表達式
+
+        //    let celsius_to_faharenhelt = function(degreeC){
+        //         let degreeF= degreeC * (9/5) +32 ;
+        //         console.log(`攝氏${degreeC}度C 可以轉化成華氏${degreeF}度C`);
+        //     }
+        // onsole.log(); (temp(20, "C"));
+
+
+        //箭頭函式
+
+        // const count = function (w, h) {
+        //     return (w * h);
+        // }
+        // const count = (w, h) => w * h;
+
+
+        // // const doSomething = function (job) {
+        // //     return `do you ${job}`;
+        // // }
+        // const doSomething = job => `do you ${job} `
+
+
+        // console.log(count(80,90));
+        // console.log(doSomething("housework"));
+
+
+        // 立即執行函示 (IIFE) 馬上執行它   ，只使用一次，讓廣域變數>>區域變數。
+
+        // (function (w, h) {
+        //     console.log(w * h);
+        // }(5, 8));
+
+        // (function (y) {
+        //     let x = y * 100 + 1
+        //     console.log(x);
+        //     return x;
+        // }(9));
+
+        // //遞迴函式
+        // function factorial(n) {
+        //     if (n != 0) {
+        //         return (n * factorial(n - 1))
+        //     }
+        //     return 1;
+        // }
+        // //factorial(3)
+        // 3 * factorial(2)
+        // 3 * 2 * factorial(1)
+        // 3 * 2 * 1 * factorial(0)
+        // 3 * 2 * 1 * 1
+
+
+
+        // console.log(factorial(3));
+        // console.log(factorial(1));
+
+        //Callback  cb
+
+        // function fun1(cb1) {
+        //     window.setTimeout(function () {
+        //         console.log("fun1");
+        //         cb1(fun3); //fun2()
+        //     }, 3000);
+
+        //     //檔案讀(FileReader)寫(x) => 效能不好
+        //     //透過Internet去要資料
+        //     //yahoo
+        // }
+        // function fun2(cb2) {
+        //     window.setTimeout(function () {
+        //         console.log("fun2");
+        //         cb2();
+        //     }, 2000);
+        // }
+        // function fun3() {
+        //     window.setTimeout(function () {
+        //         console.log("fun3");
+        //     }, 1000);
+        // }
+
+        // //fun1 > fun2 > fun3
+        // fun1(fun2);  //呼叫fun1，fun1完成後回來呼叫(回呼callback)fun2
+        // fun2();
+        // fun3();
+
+        //-----------------------
+
+        // function fun4() {
+        //     console.log('登入成功')
+        // }
+        // function fun5() {
+        //     console.log('登入失敗')
+        // }
+
+        // function judgement(f1, f2) {
+        //     let islogin = true;
+        //     if (islogin) {
+        //         f1();
+        //     } else {
+        //         f2();
+        //     }
+        // }
+
+        // judgement(fun4, fun5);
+
+        // //----------------------------------------------------
+
+        // window.setTimeout(cbF, 1000);
+        // function cbF() {
+        //     console.log("fun...");
+        // }
+        //-----------------------------------------------------
+
+        // 閉包 closure
+
+        // for (var i = 0; i < 5; i++) {
+        //     //  console.log(i); //0 1 2 3 4
+        //     //  i = 5
+        //     window.setTimeout(function () {
+        //         console.log(i); //?? 5 5 5 5 5
+        //     }, 1000);
+        // }
+        // for (let i = 0; i < 5; i++) {
+        //     //  console.log(i); //0 1 2 3 4
+        //     //  i = 5
+        //     window.setTimeout(function () {
+        //         console.log(i); // 0 1 2 3 4
+        //     }, 1000);
+        // }
+
+
+        // for (var i = 0; i < 5; i++) {
+        //     //  console.log(i); //0 1 2 3 4
+        //     //  i = 5
+        //     (function (x) {
+        //         window.setTimeout(function () {
+        //             console.log(x); //0 1 2 3 4
+        //         }, 1000);
+        //     })(i);
+
+        // }
+
+        // function f() {
+        //     var a = 1;  //區域變數
+        //     var b = function () {
+        //         a = 3;
+        //         console.log(a);
+        //     }
+        //     return b;
+        // }
+
+        // var c = f(); //b()
+        // c();
+
+        //getElementById("id名稱")
+        // let btns = document.getElementsByTagName("button");
+        // for (var i = 0, max = btns.length; i < max; i++) {
+        //     //i=5
+        //     (function (x) {
+        //         btns[i].addEventListener("click", function (evt) {
+        //             console.log(evt.target.textContent);
+        //             console.log(x); //0 1 2 3 4
+        //         })
+
+        //     })(i)
+
+        // }
+
+
+
+
+    
+
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for="name">姓名：</label>
+        <input type="text" id="Name" value="小名"> 
+        <div id="Mdiv"></div>
+    </form>
+    
+    <script>
+        // catch id 的值 放入 FrName
+        const FrName = document.getElementById("Name");
+        const empty =document.getElementById("Mdiv");
+        // 偵測input輸入值 .addEvenListener監測 ，帶入方法console.log抓取FrName.Value
+        FrName.addEventListener("input",function(){
+            console.log(FrName.value)
+        })
+        FrName.addEventListener("input",function(){
+            empty.innerHTML= FrName.value;
+        })
+
+        
+    </script>
+</body>
+</html>

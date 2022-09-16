@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function passwordcheck(word) {
+            let y = /[a-z]+/;
+            let z = /\W+/;
+            let q = /[0-9]+/;
+            if (word.length < 8 || word === word.toUpperCase ||
+                word === word.toLowerCase || !y.test(word) || !q.test(word) || !z.test(word)) {
+                return "密碼不符規定";
+            } else {
+
+                return "密碼正確";
+            }
+        }
+
+        console.log(passwordcheck("sQ9375@@55"));
+
+
+    </script>
+</body>
+
+</html>

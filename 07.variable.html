@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="usd">輸入美金</label>
+    <input type="text" id="inputtxt">
+    <span id="outtxt"></span>
+<br>
+    <label for="">輸入半徑</label>
+    <input type="text" id="r">
+    <span id="circle"></span>
+    <script>
+        const RATE = 30.5;
+        let inputtxt = document.getElementById('inputtxt');
+        let outtxt = document.getElementById('outtxt');
+        inputtxt.addEventListener("blur",function(){
+            let usd = inputtxt.value;
+            outtxt.innerText = usd * RATE;
+        })
+        const PI =3.14159
+        let r_input = document.getElementById('r');
+        let circle = document.getElementById('circle');
+        r_input.addEventListener("blur",function(){
+            let rr = r_input.value;
+            circle.innerText= 2*rr*PI;
+        })
+        
+
+        
+
+        
+    </script>
+</body>
+</html>
