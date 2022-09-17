@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AutoComplete demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row mt-3">
+            <div class="col-3"></div>
+            <div class="col">
+                <input type="text" class="form-control mb-3" id="autocomplete">
+                <div class="list-group">
+                    <button type="button" class="list-group-item list-group-item-action active">
+                        The current butto
+                    </button>
+                    <button type="button" class="list-group-item list-group-item-action">A second button item</button>
+                    <button type="button" class="list-group-item list-group-item-action">A third button item</button>
+                    <button type="button" class="list-group-item list-group-item-action">A fourth button item</button>
+                    <button type="button" class="list-group-item list-group-item-action" disabled>A disabled button
+                        item</button>
+                </div>
+            </div>
+            <div class="col-3"></div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+    <script src="datas/travel.js"></script>
+    <script>
+        const inputText = document.querySelector("#autocomplete");
+        const listData = document.querySelector(".list-group");
+        listData.style.display = "none";
+        // DATAS.forEach(data => {
+
+        //     let { Name } = data;
+        //     console.log(Name);
+        // })
+
+        inputText.addEventListener("input", event => {
+            //使用者要搜尋的內容
+            let keyword = event.target.value;
+            listData.style.display = "block";
+            //先清除原有的搜尋結果
+            while (listData.hasChildNodes()) {
+                listData.removeChild(listData.lastChild);
+            }
+
+            let results = DATAS.filter(data => data.Name.indexOf(keyword) !== -1)
+
+
+            // 顯示結果
+            //[""]
+            let htmldata = results.map(data => {
+                return (
+                    `<button type="button" onclick="read(event)" class="list-group-item list-group-item-action">${data.Name.trim()}</button>`
+                );
+            })
+            console.log(htmldata);
+            listData.innerHTML = htmldata.join(""); // <button></button>
+
+
+
+
+        })
+
+        function read(e) {
+            inputText.value = e.target.innerText;
+            listData.style.display = "none";
+        }
+    </script>
+</body>
+
+</html>
